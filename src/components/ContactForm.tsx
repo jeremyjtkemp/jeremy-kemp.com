@@ -99,7 +99,7 @@ export default function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-4 p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg"
         >
-          Thank you for your message! I'll get back to you soon.
+          Thank you! Your message has been sent.
         </motion.div>
       )}
 

@@ -22,7 +22,7 @@ export default function Contact() {
             <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Have a project in mind or want to discuss potential opportunities?
-              I'd love to hear from you. Fill out the form below or reach out through
+              I&apos;d love to hear from you. Fill out the form below or reach out through
               any of the social links.
             </p>
           </motion.div>

@@ -22,7 +22,7 @@ export default function Portfolio() {
           >
             <h1 className="text-4xl font-bold mb-4">My Work</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Here are some of the projects I've worked on. Each one represents a unique challenge
+              Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge
               and solution, showcasing my skills in web development and problem-solving.
             </p>
           </motion.div>

@@ -56,7 +56,7 @@ export default function About() {
           >
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              I'm a passionate web developer and creative problem solver with a strong foundation in modern web technologies. 
+              I&apos;m a passionate web developer and creative problem solver with a strong foundation in modern web technologies. 
               With several years of experience in building scalable applications, I specialize in creating elegant solutions 
               that combine technical excellence with user-centric design.
             </p>
