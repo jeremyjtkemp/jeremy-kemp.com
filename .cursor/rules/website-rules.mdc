@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+🎨 DESIGN & UX
+- Use a clean, minimal, modern aesthetic suitable for a professional developer portfolio.
+- Prioritise mobile-first design using Tailwind’s responsive utilities (`sm:`, `md:`, `lg:`).
+- All styling should be done with Tailwind CSS — do not use CSS modules, inline styles, or SCSS.
+- Use consistent spacing, clear typography, and balanced layout for strong visual hierarchy.
+- Add dark mode support if not already enabled.
+
+📦 CODE STRUCTURE
+- Use TypeScript in all files, including pages, components, and data.
+- Keep components modular and reusable, especially for common elements like buttons, cards, forms, and timeline items.
+- File structure should follow best practices:
+  - `/pages` for routes
+  - `/components` for all UI building blocks
+  - `/data` for dynamic/static content like project lists
+  - `/lib` or `/utils` for animation configs or formatting logic
+- Use camelCase or kebab-case file naming — be consistent across folders.
+
+🧠 CONTENT & COPYWRITING
+- Use professional but personable placeholder content that suits a modern junior developer or consultant.
+- Hero section should rotate titles like “Web Developer”, “Tech Consultant”, “Creative Problem Solver”.
+- Copy should be short, confident, and welcoming — avoid overly technical jargon on the homepage.
+- Use short headings like “Skills”, “Projects”, “Let’s Connect”.
+
+🛠 FUNCTIONALITY & INTEGRATION
+- Use Formspree for contact form submissions (with a placeholder `action` value).
+- Include links to GitHub, LinkedIn, and Email that are easy to customise.
+- All form inputs must include proper labels and placeholders for accessibility.
+- No backend or database integration — this is a static frontend site.
+- Include full SEO support with `title`, `meta description`, `og:image`, etc. for each page.
+
+✨ ANIMATIONS
+- Use Framer Motion for:
+  - Page transitions (slide/fade)
+  - Scroll reveal animations on About, Portfolio sections
+  - Hover animations on buttons, cards, and icons
+- Animations should enhance UX — keep them smooth, elegant, and non-distracting.
+
+💡 DEVELOPMENT STYLE
+- Use React functional components with arrow functions.
+- Prefer `const` over `let` unless reassignment is required.
+- Keep components small and readable — extract repeated logic.
+- Use inline comments to explain complex animation or layout logic where needed.
+- Do not include unnecessary dependencies or large packages.
+
+✅ BEST PRACTICES
+- Ensure strong accessibility: use semantic HTML, aria labels, alt text, and keyboard focus states.
+- Keep all replaceable content (like projects) in a single data file (`/data/portfolio.ts`).
+- Ensure pages and components are fully responsive down to mobile widths.
+- Include a favicon and social preview meta tags.
+- Maintain consistent button styles, spacing, and typography across all pages.
+
+🧹 MAINTENANCE
+- Only use actively maintained open-source packages (no jQuery, Moment.js, etc).
+- Clearly label all placeholder content (bio, image paths, project links, email address).
+- Avoid dead code, unused imports, and overly complex patterns.
