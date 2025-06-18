@@ -80,10 +80,10 @@ export default function About() {
           >
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-              Hi, I'm Jeremy Kemp—a builder, connector, and lifelong learner. I graduated from Davidson College, but my education didn't stop at the classroom. From leading swim teams to launching digital products, and from late-night hackathons to navigating new cultures in Taiwan and Vietnam, I've learned that the best ideas come from mixing curiosity with courage.
+              Hi, I&apos;m Jeremy Kemp—a builder, connector, and lifelong learner. I graduated from Davidson College, but my education didn&apos;t stop at the classroom. From leading swim teams to launching digital products, and from late-night hackathons to navigating new cultures in Taiwan and Vietnam, I&apos;ve learned that the best ideas come from mixing curiosity with courage.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-              I love turning big problems into creative solutions—whether that's designing a new app, collaborating with people from around the world, or just figuring out how to make life a little easier (and more fun) for others. My journey has been anything but linear, and I wouldn't have it any other way.
+              I love turning big problems into creative solutions—whether that&apos;s designing a new app, collaborating with people from around the world, or just figuring out how to make life a little easier (and more fun) for others. My journey has been anything but linear, and I wouldn&apos;t have it any other way.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               If you want the full story (or just want to swap travel tips or tech ideas), download my resume below!
