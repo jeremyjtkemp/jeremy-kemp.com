@@ -84,13 +84,13 @@ export default function About() {
           >
             <h1 className="text-4xl font-bold mb-6">About Me</h1>
             <p className="text-lg mb-6">
-              Hi, I'm Jeremy. I graduated from Davidson College, where I developed a passion for technology, teamwork, and creative problem-solving. I grew up in Southeast Asia and have traveled to many countries, which has given me a broad perspective and a love for working with people from different backgrounds. I came to the United States for college, and since then, I've had the chance to work in places like Taiwan and Vietnam.
+              Hi, I&apos;m Jeremy. I graduated from Davidson College, where I developed a passion for technology, teamwork, and creative problem-solving. I grew up in Southeast Asia and have traveled to many countries, which has given me a broad perspective and a love for working with people from different backgrounds. I came to the United States for college, and since then, I&apos;ve had the chance to work in places like Taiwan and Vietnam.
             </p>
             <p className="text-lg mb-6">
-              I enjoy turning complex problems into practical solutions, whether that's designing a new app, collaborating with people from around the world, or finding ways to make life a little easier and more enjoyable for others. My path hasn't always been straightforward, but every experience has helped me grow and see things from new angles.
+              I enjoy turning complex problems into practical solutions, whether that&apos;s designing a new app, collaborating with people from around the world, or finding ways to make life a little easier and more enjoyable for others. My path hasn&apos;t always been straightforward, but every experience has helped me grow and see things from new angles.
             </p>
             <p className="text-lg mb-8">
-              If you'd like to know more about my background or want to connect about tech, travel, or new ideas, feel free to download my resume below!
+              If you&apos;d like to know more about my background or want to connect about tech, travel, or new ideas, feel free to download my resume below!
             </p>
             <div className="flex justify-center mb-12">
               <Link
