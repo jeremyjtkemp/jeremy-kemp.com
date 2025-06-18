@@ -7,10 +7,10 @@ import Navbar from '@/components/Navbar';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jeremy Kemp | Web Developer & Tech Consultant",
+  title: "Jeremy Kemp",
   description: "Personal website of Jeremy Kemp - Web Developer, Tech Consultant, and Creative Problem Solver",
   openGraph: {
-    title: "Jeremy Kemp | Web Developer & Tech Consultant",
+    title: "Jeremy Kemp",
     description: "Personal website of Jeremy Kemp - Web Developer, Tech Consultant, and Creative Problem Solver",
     type: "website",
   },
