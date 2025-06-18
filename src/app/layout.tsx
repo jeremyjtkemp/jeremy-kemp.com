@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex flex-col`}>
+      <body className={`${inter.className} bg-white text-primary min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-1 pt-20">
           {children}
