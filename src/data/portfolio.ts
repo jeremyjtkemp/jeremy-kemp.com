@@ -10,6 +10,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'project-4',
+    title: 'Exterior Cleaning Marketplace',
+    description: 'A full-stack marketplace platform for exterior cleaning services, built in collaboration with Lucid Bots. Features include user authentication, job listings, bidding, messaging, and a seamless user experience.',
+    image: '/ExteriorMarketplace.png',
+    tags: ['Product Development', 'Full Stack', 'Marketplace', 'Flutter', 'Firebase', 'Lucid Bots'],
+    githubUrl: 'https://github.com/jeremykemp7/ExteriorCleaningMarketplace',
+    liveUrl: 'https://exterior-cleaning-marketplace.web.app/',
+  },
+  {
+    id: 'project-3',
+    title: 'Usability Test',
+    description: 'A comprehensive usability testing project that evaluates and improves user experience through thoughtful design and analysis, identifying key pain points and opportunities for enhancement.',
+    image: '/projects/spotify_usability_test.png',
+    tags: ['Usability Testing', 'UX Research', 'Design Analysis'],
+    githubUrl: 'https://github.com/jeremykemp1/dig245-usability-test',
+    liveUrl: 'https://jeremykemp1.github.io/dig245-usability-test/',
+  },
+  {
     id: 'project-1',
     title: 'Fly on the Wall',
     description: 'An interactive storytelling platform that merges design and technology for an engaging user experience, exploring user behavior through observation and analysis.',
@@ -26,14 +44,5 @@ export const projects: Project[] = [
     tags: ['Regenerative Design', 'Innovation', 'Digital Prototyping'],
     githubUrl: 'https://github.com/jeremykemp1/dig245-regenerative',
     liveUrl: 'https://jeremykemp1.github.io/dig245-regenerative/',
-  },
-  {
-    id: 'project-3',
-    title: 'Usability Test',
-    description: 'A comprehensive usability testing project that evaluates and improves user experience through thoughtful design and analysis, identifying key pain points and opportunities for enhancement.',
-    image: '/projects/spotify_usability_test.png',
-    tags: ['Usability Testing', 'UX Research', 'Design Analysis'],
-    githubUrl: 'https://github.com/jeremykemp1/dig245-usability-test',
-    liveUrl: 'https://jeremykemp1.github.io/dig245-usability-test/',
   },
 ]; 

@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
     >
       <div className="relative h-48 w-full">
         <Image
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
       
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
         <p className="text-gray-600 dark:text-gray-300 mb-4">
           {project.description}
@@ -44,27 +44,45 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
         
-        <div className="flex gap-4">
-          {project.githubUrl && (
+        <div className="flex gap-4 mt-auto pt-6">
+          {project.githubUrl && project.liveUrl ? (
+            <>
+              <Link
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-1/2 px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
+              >
+                GitHub
+              </Link>
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-1/2 px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
+              >
+                Live Demo
+              </Link>
+            </>
+          ) : project.githubUrl ? (
             <Link
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg text-center hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+              className="w-full px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
             >
               GitHub
             </Link>
-          )}
-          {project.liveUrl && (
+          ) : project.liveUrl ? (
             <Link
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors"
+              className="w-full px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
             >
               Live Demo
             </Link>
-          )}
+          ) : null}
         </div>
       </div>
     </motion.div>

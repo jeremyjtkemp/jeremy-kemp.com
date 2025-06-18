@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from '@/components/Navbar';
+import { usePathname } from 'next/navigation';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const isHome = pathname === '/';
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-primary min-h-screen flex flex-col`}>
+      <body className={`${inter.className} bg-primary min-h-screen flex flex-col${isHome ? ' home' : ''}`}>
         <Navbar />
         <main className="flex-1 pt-20">
           {children}

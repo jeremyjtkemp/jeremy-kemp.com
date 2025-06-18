@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -22,13 +21,16 @@
 
 html {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #fff;
   color: #2b6777;
 }
 
-body {
-  background-color: #f2f2f2;
-  color: #2b6777;
+body,
+body.home,
+body.home main,
+body.home section {
+  background: #2b6777 !important;
+  color: #fff !important;
   min-height: 100vh;
 }
 
@@ -49,12 +51,15 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-section, .card, .surface {
-  background-color: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px 0 rgba(44, 103, 119, 0.06);
-  padding: 2rem;
-  margin-bottom: 2rem;
+section,
+.card,
+.surface {
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
 }
 
 button, .btn {
@@ -67,15 +72,73 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-  background-color: #52ab98;
+  background-color: #2b6777;
   color: #fff;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
-  background: #c8d8e4;
+  background: #2b6777;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2b6777;
+  background: #fff;
   border-radius: 4px;
+}
+
+/* Remove card effect from home page hero section */
+body.home section,
+body.home main,
+body.home .card,
+body.home .surface {
+  background: #2b6777 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-section,
+.hero-section * {
+  color: #fff !important;
+}
+
+nav a,
+nav a:visited {
+  color: #fff !important;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #c8d8e4 !important;
+}
+
+.bg-white, .bg-white * {
+  color: #2b6777 !important;
+}
+
+.download-btn {
+  display: inline-block;
+  margin: 2rem auto 3rem auto;
+  padding: 0.75rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background: transparent;
+  text-align: center;
+  transition: color 0.2s, border-color 0.2s;
+}
+.download-btn:hover, .download-btn:focus {
+  color: #c8d8e4;
+  border-color: #c8d8e4;
+}
+
+footer a,
+footer a:visited {
+  color: #fff !important;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #c8d8e4 !important;
 }

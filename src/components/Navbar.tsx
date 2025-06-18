@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
-  { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Contact', path: '/contact' },
@@ -15,10 +14,24 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed w-full bg-primary z-50">
+    <motion.nav
+      className="fixed w-full bg-primary z-50"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: scrolled ? 0 : 1 }}
+      transition={{ duration: 0.4 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="text-xl font-bold text-white">
@@ -34,22 +47,13 @@ export default function Navbar() {
                   href={item.path}
                   className={`flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors border-b-2 border-transparent
                     ${pathname === item.path
-                      ? 'text-white border-b-2 border-mint'
-                      : 'text-secondary hover:text-mint hover:border-b-2 hover:border-mint'
+                      ? 'text-white border-b-2 border-secondary'
+                      : 'text-white hover:text-secondary hover:border-b-2 hover:border-secondary'
                     }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <a
-                href="/Jeremy Kemp Resume (June 2025).pdf"
-                download
-                className="flex items-center gap-1 px-3 py-2 rounded-md text-sm font-semibold transition-colors bg-white text-primary hover:bg-mint hover:text-white border border-mint shadow-md ml-2"
-                style={{ boxShadow: '0 2px 8px 0 rgba(82, 171, 152, 0.15)' }}
-              >
-                <ArrowDownTrayIcon className="h-5 w-5 self-center text-mint" />
-                Resume
-              </a>
             </div>
           </div>
 
@@ -85,7 +89,7 @@ export default function Navbar() {
                 className={`block px-3 py-2 rounded-md text-base font-semibold border-b-2 border-transparent
                   ${pathname === item.path
                     ? 'text-white border-b-2 border-mint'
-                    : 'text-secondary hover:text-mint hover:border-b-2 hover:border-mint'
+                    : 'text-white hover:text-mint hover:border-b-2 hover:border-mint'
                   }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -95,8 +99,7 @@ export default function Navbar() {
             <a
               href="/Jeremy Kemp Resume (June 2025).pdf"
               download
-              className="flex items-center px-3 py-2 rounded-md text-base font-semibold bg-white text-primary hover:bg-mint hover:text-white border border-mint shadow-md mt-2"
-              style={{ boxShadow: '0 2px 8px 0 rgba(82, 171, 152, 0.15)' }}
+              className="flex items-center px-3 py-2 rounded-md text-base font-semibold bg-primary text-white hover:bg-mint hover:text-primary border border-white shadow-md mt-2"
               onClick={() => setIsOpen(false)}
             >
               <ArrowDownTrayIcon className="h-5 w-5 mr-2 text-mint" />
@@ -105,6 +108,6 @@ export default function Navbar() {
           </div>
         </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 } 

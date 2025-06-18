@@ -12,7 +12,7 @@ export default function Portfolio() {
         title="Portfolio"
         description="Explore Jeremy Kemp's portfolio of web development projects, showcasing expertise in Next.js, React, and modern web technologies."
       />
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-inherit">
         <div className="max-w-7xl mx-auto px-4 py-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -20,8 +20,8 @@ export default function Portfolio() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl font-bold mb-4">My Work</h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white !text-white">My Work</h1>
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Here are some of the projects I&apos;ve worked on. Each one represents a unique challenge
               and solution, showcasing my skills in web development and problem-solving.
             </p>

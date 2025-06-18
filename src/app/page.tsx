@@ -5,9 +5,16 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const titles = [
+  'Problem Solver',
   'Web Developer',
   'Tech Consultant',
-  'Creative Problem Solver',
+  'AI Enthusiast',
+  'Product Builder',
+  'UI/UX Advocate',
+  'Global Citizen',
+  'Team Leader',
+  'Lifelong Learner',
+  'Data Explorer',
 ];
 
 export default function Home() {
@@ -23,8 +30,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-primary flex items-center justify-center">
       {/* Hero Section */}
-      <section className="w-full flex flex-col items-center justify-center bg-primary min-h-screen">
-        <div className="z-10 text-center px-4 w-full flex flex-col items-center justify-center">
+      <section className="hero-section w-full flex flex-col items-center justify-center bg-primary min-h-screen m-0 p-0 border-none rounded-none shadow-none">
+        <div className="z-10 text-center px-4 w-full flex flex-col items-center justify-center m-0 p-0 border-none rounded-none shadow-none">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,7 +48,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="block text-xl md:text-2xl text-secondary"
+                className="block text-xl md:text-2xl text-white"
               >
                 {titles[current]}
               </motion.span>
@@ -55,15 +62,13 @@ export default function Home() {
           >
             <Link
               href="/portfolio"
-              className="px-8 py-3 border-2 border-secondary text-white rounded-lg hover:bg-mint hover:text-white transition-colors font-semibold"
-              style={{ borderColor: '#c8d8e4' }}
+              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:text-mint hover:border-mint transition-colors font-semibold"
             >
               See My Work
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border-2 border-secondary text-secondary rounded-lg hover:bg-mint hover:text-white transition-colors font-semibold"
-              style={{ borderColor: '#c8d8e4', color: '#c8d8e4' }}
+              className="px-8 py-3 border-2 border-white text-white rounded-lg hover:text-mint hover:border-mint transition-colors font-semibold"
             >
               Get in Touch
             </Link>

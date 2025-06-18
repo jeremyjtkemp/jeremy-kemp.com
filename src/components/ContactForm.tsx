@@ -39,7 +39,7 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 text-white">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2">
             Name
@@ -50,7 +50,7 @@ export default function ContactForm() {
             name="name"
             required
             placeholder="Your name"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-gray-700 bg-transparent text-white focus:ring-2 focus:ring-blue-500 focus:border-white"
           />
         </div>
 
@@ -64,7 +64,7 @@ export default function ContactForm() {
             name="email"
             required
             placeholder="your.email@example.com"
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-gray-700 bg-transparent text-white focus:ring-2 focus:ring-blue-500 focus:border-white"
           />
         </div>
 
@@ -78,7 +78,7 @@ export default function ContactForm() {
             required
             rows={4}
             placeholder="Your message here..."
-            className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-gray-700 bg-transparent text-white focus:ring-2 focus:ring-blue-500 focus:border-white"
           />
         </div>
 
@@ -87,7 +87,7 @@ export default function ContactForm() {
           whileTap={{ scale: 0.98 }}
           type="submit"
           disabled={isSubmitting}
-          className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="max-w-xs mr-auto px-8 py-3 border-2 border-white text-white rounded-lg hover:underline transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed bg-transparent"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </motion.button>
@@ -102,34 +102,6 @@ export default function ContactForm() {
           Thank you! Your message has been sent.
         </motion.div>
       )}
-
-      <div className="mt-12 flex justify-center space-x-6">
-        <a
-          href="https://github.com/jeremyjtkemp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-          aria-label="GitHub Profile"
-        >
-          <Github className="w-6 h-6" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/jeremyjtkemp/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-          aria-label="LinkedIn Profile"
-        >
-          <Linkedin className="w-6 h-6" />
-        </a>
-        <a
-          href="mailto:jjtk2002@gmail.com"
-          className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
-          aria-label="Email"
-        >
-          <Mail className="w-6 h-6" />
-        </a>
-      </div>
     </div>
   );
 } 
