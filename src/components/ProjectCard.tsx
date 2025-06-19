@@ -61,7 +61,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 rel="noopener noreferrer"
                 className="w-1/2 px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
               >
-                Live Demo
+                View Project
               </Link>
             </>
           ) : project.githubUrl ? (
@@ -80,7 +80,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               rel="noopener noreferrer"
               className="w-full px-4 py-2 border-2 border-primary text-primary rounded-lg text-center hover:underline transition-colors font-semibold bg-transparent"
             >
-              Live Demo
+              View Project
             </Link>
           ) : null}
         </div>

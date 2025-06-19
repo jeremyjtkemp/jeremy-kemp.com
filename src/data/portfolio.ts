@@ -45,4 +45,12 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/jeremykemp1/dig245-regenerative',
     liveUrl: 'https://jeremykemp1.github.io/dig245-regenerative/',
   },
+  {
+    id: 'project-5',
+    title: 'One Booking One Tree',
+    description: 'A logo design project for The Sarojin, a 5-star luxury resort in Thailand, representing their environmental initiative where they plant one tree for every booking made. The design symbolizes the direct connection between guest bookings and environmental impact through a minimalist circular emblem featuring a growing tree.',
+    image: '/projects/one_booking_one_tree.png',
+    tags: ['Logo Design', 'Graphic Design', 'Branding', 'Environmental', 'Hospitality', 'The Sarojin'],
+    liveUrl: 'https://www.sarojin.com/blog/khao-lak-resort-one-booking-one-tree2023/',
+  },
 ]; 
