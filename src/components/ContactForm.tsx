@@ -154,7 +154,7 @@ export default function ContactForm() {
             <CheckCircleIcon className="w-6 h-6 text-accent-600 dark:text-accent-400 flex-shrink-0" />
             <div>
               <p className="font-medium text-accent-800 dark:text-accent-200">Message sent successfully!</p>
-              <p className="text-sm text-accent-600 dark:text-accent-300">I'll get back to you as soon as possible.</p>
+              <p className="text-sm text-accent-600 dark:text-accent-300">I&apos;ll get back to you as soon as possible.</p>
             </div>
           </motion.div>
         )}

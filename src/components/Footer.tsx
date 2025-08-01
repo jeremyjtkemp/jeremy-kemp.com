@@ -5,7 +5,6 @@ import {
   Github, 
   Linkedin, 
   Mail, 
-  Heart,
   ArrowUp 
 } from 'lucide-react';
 
