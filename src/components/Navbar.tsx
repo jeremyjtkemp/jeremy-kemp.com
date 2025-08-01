@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { Bars3Icon, XMarkIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
   { name: 'About', path: '/about' },
@@ -27,29 +27,63 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="fixed w-full bg-primary z-50"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: scrolled ? 0 : 1 }}
-      transition={{ duration: 0.4 }}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-soft' 
+          : 'bg-transparent'
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-xl font-bold text-white">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          <Link 
+            href="/" 
+            style={{
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: 'black',
+              textDecoration: 'none',
+              transition: 'transform 0.2s ease',
+              outline: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          >
             Jeremy Kemp
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-center space-x-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`flex items-center px-3 py-2 rounded-md text-sm font-semibold transition-colors border-b-2 border-transparent
-                    ${pathname === item.path
-                      ? 'text-white border-b-2 border-secondary'
-                      : 'text-white hover:text-secondary hover:border-b-2 hover:border-secondary'
-                    }`}
+                  style={{
+                    padding: '8px 16px',
+                    fontSize: '14px',
+                    fontWeight: pathname === item.path ? '700' : '500',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none',
+                    color: 'black',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    outline: 'none'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.fontWeight = '700';
+                    e.currentTarget.style.fontSize = '15px';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.fontWeight = pathname === item.path ? '700' : '500';
+                    e.currentTarget.style.fontSize = '14px';
+                  }}
                 >
                   {item.name}
                 </Link>
@@ -61,53 +95,81 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-mint focus:outline-none bg-primary"
+              className="p-2 rounded-lg text-secondary-600 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-secondary-50 dark:hover:bg-secondary-900/20 transition-colors"
+              aria-label="Toggle menu"
             >
-              {isOpen ? (
-                <XMarkIcon className="block h-6 w-6" />
-              ) : (
-                <Bars3Icon className="block h-6 w-6" />
-              )}
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <XMarkIcon className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Bars3Icon className="w-6 h-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-primary shadow-md"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={`block px-3 py-2 rounded-md text-base font-semibold border-b-2 border-transparent
-                  ${pathname === item.path
-                    ? 'text-white border-b-2 border-mint'
-                    : 'text-white hover:text-mint hover:border-b-2 hover:border-mint'
-                  }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              href="/Jeremy Kemp Resume (June 2025).pdf"
-              download
-              className="flex items-center px-3 py-2 rounded-md text-base font-semibold bg-primary text-white hover:bg-mint hover:text-primary border border-white shadow-md mt-2"
-              onClick={() => setIsOpen(false)}
-            >
-              <ArrowDownTrayIcon className="h-5 w-5 mr-2 text-mint" />
-              Resume
-            </a>
-          </div>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-secondary-200 dark:border-secondary-700"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  style={{
+                    display: 'block',
+                    padding: '12px 16px',
+                    fontSize: '16px',
+                    fontWeight: pathname === item.path ? '700' : '500',
+                    transition: 'all 0.2s ease',
+                    textDecoration: 'none',
+                    color: 'black',
+                    backgroundColor: 'transparent',
+                    border: 'none',
+                    outline: 'none'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.fontWeight = '700';
+                    e.currentTarget.style.fontSize = '17px';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.fontWeight = pathname === item.path ? '700' : '500';
+                    e.currentTarget.style.fontSize = '16px';
+                  }}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 } 
